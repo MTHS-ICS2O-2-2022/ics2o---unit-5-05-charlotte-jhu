@@ -24,15 +24,18 @@ function myButtonClicked() {
     if (angleA==90 || angleB==90 || angleC==90) {
       // ouput
       document.getElementById("answer").innerHTML = "You have a right triangle."
-    } else if (angleA==60 && angleB==60 && angleC==60) {
+    } else if (angleA.toFixed(2)==60 && angleB.toFixed(2)==60 && angleC.toFixed(2)==60) {
       // ouput
       document.getElementById("answer").innerHTML = "You have an equilateral triangle."
     } else if (angleA==angleB || angleB==angleC || angleC==angleA) {
       // ouput
       document.getElementById("answer").innerHTML = "You have an isosceles triangle."
-    } else (angleA != angleB && angleB != angleC && angleC != angleA) {
+    } else if (angleA != angleB && angleB != angleC && angleC != angleA) {
       // ouput
       document.getElementById("answer").innerHTML = "You have a scalene triangle."
+    } else {
+      // ouput
+      document.getElementById("answer").innerHTML = "You do not have a triangle."
     }
   } else { 
     // ouput
