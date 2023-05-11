@@ -1,9 +1,84 @@
 <!DOCTYPE html>
-<html>
+<!-- ICS2O-Unit5-05-->
+<html lang="en-ca">
   <head>
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="What Kind Of Triangle Do You Have?" />
+    <meta name="keywords" content="mths, ics2o" />
+    <meta name="author" content="Charlotte Jhu" />
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-deep_purple.min.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <title>What Kind Of Triangle Do You Have?</title>
   </head>
   <body>
-    <p>Paragraph</p>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="./js/script.js"></script>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <span class="mdl-layout-title">What Kind Of Triangle Do You Have?</span>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div id="image">
+          <img class="right-image" src="./images/triangles.png" alt="Types of Triangles"/>
+        </div>
+        <div class="page-content-instructions">
+          <div id="instructions">Enter the side lengths to out the type of triangle</div>
+        </div>
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <!--input pattern attribute-->
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="length-a" />
+            <!--mdl-textfielf__label-->
+            <label class="mdl-textfield__label" for="length-a">Length A</label>
+            <!--class "mdl-textfield__error"-->
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br />
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <!--input pattern attribute-->
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="length-b" />
+            <!--mdl-textfielf__label-->
+            <label class="mdl-textfield__label" for="length-b">Length B</label>
+            <!--class "mdl-textfield__error"-->
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br />
+        <!-- Numeric Textfield -->
+        <form action="#">
+          <div class="mdl-textfield mdl-js-textfield">
+            <!--input pattern attribute-->
+            <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="length-c" />
+            <!--mdl-textfielf__label-->
+            <label class="mdl-textfield__label" for="length-c">Length C</label>
+            <!--class "mdl-textfield__error"-->
+            <span class="mdl-textfield__error">Input is not a number!</span>
+          </div>
+        </form>
+        <br />
+        <!-- Accent-colored raised button with ripple -->
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          onclick="myButtonClicked()">
+          Calculate
+        </button>
+        <br />
+        <br />
+        <div class="page-content-answer">
+          <div id="answer"></div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
