@@ -27,25 +27,28 @@ func main() {
 	fmt.Scanln(&lengthC)
 
 	// process
-	var angleA =  math.Acos((math.Pow(lengthB, 2) + math.Pow(lengthC,2) - math.Pow(lengthA,2)) / (2*lengthB*lengthC)) * (180 / math.Pi)
-  angleA = math.Round(angleA)
-	//var angleA = math.Acos((math.Pow(lengthB, 2)+math.Pow(lengthC,2)-math.Pow(lengthA,2)/(2*lengthB*lengthC))) * (180 / math.Pi)
+	var angleA = math.Acos((math.Pow(lengthB, 2)+math.Pow(lengthC, 2)-math.Pow(lengthA, 2))/(2*lengthB*lengthC)) * (180 / math.Pi)
+	angleA = math.Round(angleA)
 	fmt.Println(angleA)
-	var angleB = math.Acos((math.Pow(lengthB, 2)+math.Pow(lengthC,2)-math.Pow(lengthA,2)/(2*lengthB*lengthC))) * (180 / math.Pi)
-	var angleC = math.Acos((math.Pow(lengthB, 2)+math.Pow(lengthC,2)-math.Pow(lengthA,2)/(2*lengthB*lengthC))) * (180 / math.Pi)
+	var angleB = math.Acos((math.Pow(lengthC, 2)+math.Pow(lengthA, 2)-math.Pow(lengthB, 2))/(2*lengthC*lengthA)) * (180 / math.Pi)
+	angleB = math.Round(angleB)
+	fmt.Println(angleB)
+	var angleC = math.Acos((math.Pow(lengthA, 2)+math.Pow(lengthB, 2)-math.Pow(lengthC, 2))/(2*lengthA*lengthB)) * (180 / math.Pi)
+	angleC = math.Round(angleC)
+	fmt.Println(angleC)
 	var sumOfAngles = (math.Floor(angleA)) + (math.Floor(angleB)) + (math.Floor(angleC))
 
 	if sumOfAngles == 180 {
 		if (angleA == 90 || angleB == 90 || angleC == 90) {
 			// ouput
 			fmt.Println("You have a right triangle.")
-		} else if (math.Floor(angleA) == 60 && math.Floor(angleB) == 60 && math.Floor(angleC) == 60) {
+		} else if math.Floor(angleA) == 60 && math.Floor(angleB) == 60 && math.Floor(angleC) == 60 {
 			// ouput
 			fmt.Println("You have an equilateral triangle.")
-		} else if (angleA == angleB || angleB == angleC || angleC == angleA) {
+		} else if angleA == angleB || angleB == angleC || angleC == angleA {
 			// ouput
 			fmt.Println("You have an isosceles triangle.")
-		} else if (angleA != angleB && angleB != angleC && angleC != angleA) {
+		} else if angleA != angleB && angleB != angleC && angleC != angleA {
 			// ouput
 			fmt.Println("You have a scalene triangle.")
 		} else {
@@ -56,4 +59,5 @@ func main() {
 		// ouput
 		fmt.Println("You do not have a triangle.")
 	}
+	fmt.Println("\nDone.")
 }
