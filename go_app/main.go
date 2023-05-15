@@ -25,18 +25,19 @@ func main() {
 	fmt.Scanln(&lengthB)
 	fmt.Print("Enter the third length: ")
 	fmt.Scanln(&lengthC)
+	fmt.Println("")
 
-	// process
+	// process	
 	var angleA = math.Acos((math.Pow(lengthB, 2)+math.Pow(lengthC, 2)-math.Pow(lengthA, 2))/(2*lengthB*lengthC)) * (180 / math.Pi)
-	angleA = math.Round(angleA)
-	fmt.Println(angleA)
 	var angleB = math.Acos((math.Pow(lengthC, 2)+math.Pow(lengthA, 2)-math.Pow(lengthB, 2))/(2*lengthC*lengthA)) * (180 / math.Pi)
-	angleB = math.Round(angleB)
-	fmt.Println(angleB)
 	var angleC = math.Acos((math.Pow(lengthA, 2)+math.Pow(lengthB, 2)-math.Pow(lengthC, 2))/(2*lengthA*lengthB)) * (180 / math.Pi)
+
+	var sumOfAngles = angleA + angleB + angleC
+	sumOfAngles = math.Round(sumOfAngles)
+
+	angleA = math.Round(angleA)
+	angleB = math.Round(angleB)
 	angleC = math.Round(angleC)
-	fmt.Println(angleC)
-	var sumOfAngles = (math.Floor(angleA)) + (math.Floor(angleB)) + (math.Floor(angleC))
 
 	if sumOfAngles == 180 {
 		if (angleA == 90 || angleB == 90 || angleC == 90) {
